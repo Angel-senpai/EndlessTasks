@@ -10,20 +10,25 @@ import Foundation
 
 protocol Endless {
     var name: String { get }
+    func getTasks()->[Task]
 }
 
 class Task: Endless {
     var name: String
-    private var tasks = [Endless]()
+    private var tasks = [Task]()
     init(task name: String) {
         self.name = name
     }
     
-    func getTasks()->([Endless]){
+    func getTasks()->([Task]){
         return self.tasks
     }
     
-    func addTask(task: Endless){
+    func addTask(task: Task){
         self.tasks.append(task)
+    }
+    
+    func setTasks(tasks: [Task]){
+        self.tasks = tasks
     }
 }

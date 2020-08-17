@@ -8,10 +8,24 @@
 
 import UIKit
 
+protocol TaskCellDelegate: class {
+    func setSelect(selected task: Task)
+}
+
 class TaskCell: UITableViewCell {
 
-    @IBOutlet var button: UIButton!
     @IBOutlet var label: UILabel!
+    
+    weak var delegate: TaskCellDelegate?
+    var task: Task?{
+        didSet{
+            guard let task = self.task else {return}
+            self.label.text = "\(task.name) / subtask count : \(task.getTasks().count)"
+        }
+    }
+    func set(task: Task) {
+        self.task = task
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +35,10 @@ class TaskCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+        if selected{
+            guard let task = self.task else {return}
+            delegate?.setSelect(selected: task)
+        }
     }
     
 }

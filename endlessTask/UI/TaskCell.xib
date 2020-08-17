@@ -22,10 +22,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYv-ci-vjV">
-                        <rect key="frame" x="0.0" y="-2" width="320" height="46"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="GTi-KX-7Fb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="73a-hO-ewZ"/>
@@ -35,7 +31,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="button" destination="TYv-ci-vjV" id="0sy-6o-n6h"/>
                 <outlet property="label" destination="GTi-KX-7Fb" id="b6M-gC-aw1"/>
             </connections>
             <point key="canvasLocation" x="89.855072463768124" y="141.29464285714286"/>
